@@ -1,0 +1,239 @@
+/* En este archivo escriban su CSS */
+
+/* Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap');
+
+
+
+/* Aquí les dejamos como ayuda este "reset" en el cual ajustamos algunas propiedades
+*  cuyos valores asigna por defecto el navegador.
+*/
+
+/* Reset */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    /* Para que el scrolleo en la one page sea suave */
+    scroll-behavior: smooth;
+}
+
+/* Para quitar los puntos a los items de listas */
+
+
+/* Para que los enlaces hereden el color de texto y no tengan subrayado */
+li, a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Este max-width es para que el contenido no se "estire" demasiado hacia los costados y
+*  el margin: auto; para tenerlo centrado fácilmente ;)
+*/
+main, header {
+    max-width: 1200px;
+    margin: auto;
+}
+
+main {
+    padding-top: 90px;
+}
+
+body {
+    font-family: 'Lato', sans-serif;
+    font-size: 18px;
+    background-color: #fbfbfb;
+    line-height: 1.2;
+    max-width: 1200px;
+    padding: auto;
+    margin: auto;
+}
+
+.logo {
+    width: 200px;
+    cursor: pointer;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    height: 90px;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
+    position: fixed;
+    width: 100%;
+    background-color: #fbfbfb;
+}
+
+.nav_links {
+    list-style: none;
+}
+
+.nav_links li {
+    display: inline-block;
+    padding: 0px 3.5px;
+    font-weight: bold;
+    box-shadow: inset 0 0 0 0 rgba(175, 89, 158, 0.1);
+    border-radius: 5px;
+    transition: color .3s ease-in-out, box-shadow .3s ease-in-out;
+}
+
+.nav_links li:hover {
+    color: #fbfbfb;
+    box-shadow: inset 200px 0 0 0 rgba(175, 89, 158, 0.7);
+}
+
+.foto_perfil {
+    width: 350px;
+    border-radius: 50%;
+}
+
+#foto {
+    display: flex;
+    justify-content: center;
+    padding: 20px 0;
+}
+
+
+.section1, .section2 {
+    min-height: 100vh;
+    margin: 0 10px;
+    padding: 20px;
+}
+
+.presentacion {
+    /* min-height: 100vh; */
+    text-align: center;
+    padding: 20px 0;
+}
+
+.presentacion h1 {
+    font-size: 36px;
+    padding-bottom: 20px;
+}
+
+.bottom {
+    display: flex;
+    justify-content: center;
+}
+
+#descargar {
+    background-color: #af599e;
+    color: #fbfbfb;
+    border: none;
+    border-radius: 50px;
+    font-size: 20px;
+    width: 150px;
+    height: 30px;
+    cursor: pointer;
+    box-shadow: inset 0 0 0 0 rgba(175, 89, 158, 0.1);
+    transition: color .3s ease-in-out, box-shadow .3s ease-in-out;
+}
+
+#descargar:hover {
+    background-color: rgba(175, 89, 158, 0.3);
+    color: #fbfbfb;
+    box-shadow: inset 200px 0 0 0 #af599e;
+}
+
+
+.contacto {
+    background-color: rgba(175, 89, 158, 0.3);
+    border-radius: 10px;
+    color: #0f0f0f;
+    padding: 20px;
+    text-align: center;
+}
+
+.contacto h2 {
+    font-size: 28px;
+    padding: 20px;
+}
+
+.enlaces ul {
+    display: flex;
+    justify-content: space-evenly;
+    padding-top: 40px;
+}
+
+.enlaces li {
+    display: inline-block;
+    padding: 20px;
+    font-size: 100px;
+    color: rgba(175, 89, 158, 0.5);
+    position: relative;
+    transition: .5s;
+}
+
+.enlaces li::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 400px;
+    background: transparent;
+    transition: .5s;
+    transform: scale(.9);
+    z-index: -1;
+}
+
+.enlaces li:hover::before {
+    transform: scale(1.1);
+    box-shadow: 0 0 15px #af599e;
+}
+
+.enlaces li:hover {
+    color: #af599e;
+    text-shadow: 0 0 5px #af599e;
+    border-radius: 400px;
+}
+
+
+footer {
+    height: 90px;
+    background-color: #af599e;
+    color: #fbfbfb;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+footer li {
+    list-style: none;
+    padding: 2px;
+    font-weight: bold;
+}
+
+#subir {
+    font-size: 60px;
+    color: black;
+}
+
+#subir:hover {
+    color: #fbfbfb;
+}
+
+
+
+
+
+/* Recomendaciones! 
+*  - Comenzar desde lo más general y luego ir hacia lo mas específico, asignando primero
+*    "estilos generales". Una buena idea sería comenzar por el <body> ;)
+*
+*  - Recuerden que queremos evitar "repetir código", en CSS usando la cualidad de la herencia
+*    podemos setear ciertas propiedades en un elemento padre y dejar que sean heredadas (por ejemplo: font-size)
+*
+*  - Nadie sabe todas las propiedades CSS de memoria, si no saben como hacer algo no lo recuerdan, la respuesta
+*    pueden encontrarla buscando en la web algo como "CSS como hacer ... " o "propiedad css para hacer ..."
+*
+*  - Usen mucho las herramientas para desarrolladores del navegador para ir
+*    probando el CSS que escriben, resolver dudas y problemas.
+*
+*  - Paciencia, resiliencia y creatividad! No se desanimen, las primeras experiencias maquetando con HTML y CSS
+*    pueden ser frustrantes, pero estas habilidades se van desarrollando con la experiencia, es como aprender
+*    un trabajo manual, hacer una artesanía, tocar un instrumento musical... la práctica es todo!
+*/
